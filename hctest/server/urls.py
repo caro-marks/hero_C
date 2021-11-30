@@ -22,4 +22,4 @@ router = routers.DefaultRouter()
 router.register('empresas', EmpresaViewSet, basename='Empresas')
 router.register('funcionarios', FuncionarioViewSet, basename='Funcionarios')
 
-urlpatterns = [path('admin/', admin.site.urls), path('', include(router))]
+urlpatterns = [path('admin/', admin.site.urls), path('', include(router.urls))]

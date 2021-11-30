@@ -8,14 +8,14 @@ class Empresas(admin.ModelAdmin):
     search_fields = ('cnpj', )
 
 
-admin.site.register(Empresas)
+admin.site.register(Empresa, Empresas)
 
 
 class Funcionarios(admin.ModelAdmin):
-    list_display = ('id', 'primeiro_nome', 'ultimo_nome', 'cpf', 'trabalha_em')
+    list_display = ('id', 'primeiro_nome', 'ultimo_nome', 'cpf')
     list_display_links = ('id', 'cpf')
     search_fields = ('cpf', )
     list_per_page = 25
 
 
-admin.site.register(Funcionarios)
+admin.site.register(Funcionario, Funcionarios)
