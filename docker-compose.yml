@@ -1,32 +1,23 @@
 version: '3'
 
 services:
-  database:
+  db:
     image: postgres:10
-    ports:
-      - ${DATABASE_PORT:-5432}:5432
     environment:
-      - POSTGRES_PASSWORD=${DATABASE_PASSWORD:-pass}
-      - POSTGRES_USER=${DATABASE_USER:-username}
-      - POSTGRES_DB=${DATABASE_NAME:-database}
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    ports:
+      - ${DATABASE_PORT}:5432
     volumes:
-      - ./.data/postgres:/var/lib/postgresql/data
-      - /tmp:/tmp
+      - ./.data/db:/var/lib/postgresql/data
 
   backend:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    build: .
+    command: python manage.py runserver 0.0.0.0:${APP_PORT}
     volumes:
       - ./hctest:/code
     ports:
-      - ${APP_PORT:-80}:8000
-    environment:
-      - DATABASE_PASSWORD=${DATABASE_PASSWORD:-pass}
-      - DATABASE_USER=${DATABASE_USER:-user}
-      - DATABASE_NAME=${DATABASE_NAME:-db}
-      - DATABASE_HOST=${DATABASE_HOST:-db}
-      - DATABASE_PORT=${DATABASE_PORT:-5432}
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-localhost}:-localhost
-    links:
-      - database
+      - ${APP_PORT}:8000
+    depends_on:
+      - db
