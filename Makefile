@@ -5,4 +5,5 @@ migrate:
 	sudo docker-compose run backend python manage.py migrate
 
 build:
-	sudo docker-compose up --build
+	sudo docker-compose up --build -d db
+	sudo docker-compose up --build -d backend

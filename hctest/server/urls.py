@@ -15,11 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from manager.views import EmpresaViewSet, FuncionarioViewSet
+from manager.views import ContratoViewSet, ContratosEmpresaListView, ContratosFuncionarioListView, EmpresaViewSet, FuncionarioViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('empresas', EmpresaViewSet, basename='Empresas')
 router.register('funcionarios', FuncionarioViewSet, basename='Funcionarios')
+router.register('contratos', ContratoViewSet, basename='Contratos')
 
-urlpatterns = [path('admin/', admin.site.urls), path('', include(router.urls))]
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include(router.urls)),
+    path('funcionario/<int:pk>/contratos/',
+         ContratosFuncionarioListView.as_view()),
+    path('empresa/<int:pk>/contratos/', ContratosEmpresaListView.as_view())
+]
