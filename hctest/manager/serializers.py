@@ -31,13 +31,16 @@ class FuncionarioSerializer(serializers.ModelSerializer):
 
 
 class ContratoSerializer(serializers.ModelSerializer):
+    empresa = EmpresaSerializer()
+    funcionario = FuncionarioSerializer()
+
     class Meta:
         model = Contrato
         exclude = []
 
 
 class ContratosFuncionarioSerializer(serializers.ModelSerializer):
-    empresa = serializers.StringRelatedField()
+    empresa = EmpresaSerializer()
 
     class Meta:
         model = Contrato
@@ -47,7 +50,7 @@ class ContratosFuncionarioSerializer(serializers.ModelSerializer):
 
 
 class ContratosEmpresaSerializer(serializers.ModelSerializer):
-    funcionario = serializers.StringRelatedField()
+    funcionario = FuncionarioSerializer()
 
     class Meta:
         model = Contrato
