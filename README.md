@@ -48,7 +48,7 @@ make populate
 <strong>Objeto</strong> = {
 "primeiro_nome": _nome_,
 "ultimo_nome": _sobrenome_,
-"cpf": _cpf válido_
+"cpf": _cpf válido (somente numeros)_
 }
 
 | Método | Descrição                         | Url                  |
@@ -63,7 +63,7 @@ make populate
 
 <strong>Objeto</strong> = {
 "nome_social": _nome da empresa_,
-"cnpj": _cnpj válido_
+"cnpj": _cnpj válido (somente numeros)_
 }
 
 | Método | Descrição                      | Url              |
