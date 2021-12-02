@@ -76,7 +76,7 @@ make build
 "ativo": \*Booleano"
 }
 
-_Não é possível alterar um contrato. O método HTTP DELETE funciona é SOFT: o contrato não é excluido do banco de dados, somente desativado._
+_Não é possível alterar um contrato. O método HTTP DELETE é SOFT: o contrato não é excluido do banco de dados, somente desativado._
 
 | Método | Descrição                      | Url               |
 | ------ | ------------------------------ | ----------------- |
