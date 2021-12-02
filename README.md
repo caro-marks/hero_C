@@ -28,11 +28,17 @@ cp .env.sample .env
 cp ./hctest/.env.sample ./hctest/.env
 ```
 
-### Subir Containers e Rodar a aplicação com MAKEFILE
+### Subir Containers, Realizar os testes, e Rodar a aplicação com MAKEFILE
 
 ```
 make migrate
+make test
 make build
+```
+#### Opcional: Popular o banco de dados local com **Faker** e **validate-docbr**.
+
+```
+make populate
 ```
 
 ## Documentação básica
