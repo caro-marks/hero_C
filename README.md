@@ -1,6 +1,10 @@
 <h1 align='center'> Company Hero Test </h1>
 <p align='center'> Servidor que gerencia cadastro de funcionários, empresas, e contratos entre estes. </p>
 
+<h4 align='center'> 
+	 🚀 Disponível no link https://ch-test-deploy.herokuapp.com/
+</h4>
+
 ### 🛠 Tecnologias
 
 As ferramentas usadas na construção do projeto foi:
@@ -8,10 +12,6 @@ As ferramentas usadas na construção do projeto foi:
 - **[Django](https://www.djangoproject.com/)**
 - **[Django REST](https://www.django-rest-framework.org//nuxtjs.org/)**
 - **[Docker](https://www.docker.com/)**
-
-<h4 align='center'> 
-	 🚀 Disponível no link https://ch-test-deploy.herokuapp.com/
-</h4>
 
 ## Instruções para testar a aplicação localmente
 
@@ -94,7 +94,7 @@ _Não é possível alterar um contrato. O método HTTP DELETE é SOFT: o contrat
 
 #
 
-### <a>🚀Feito por</a>
+### <a>Feito por</a>
 
 <a href="https://www.linkedin.com/in/caro-marks">
    <b>Marcos Nolasco</b> 👋🏽
