@@ -89,7 +89,7 @@ _Não é possível alterar um contrato. O método HTTP DELETE é SOFT: o contrat
 
 | Método | Descrição                                                | Url                             |
 | ------ | -------------------------------------------------------- | ------------------------------- |
-| GET    | Listar todos os funcionários de uma empresa por seu CNPJ | /empresa/_{CNPJ}_/contratos/    |
+| GET    | Listar todos os funcionários de uma empresa por seu id | /empresa/_{id}_/contratos/    |
 | GET    | Listar todos os contratos de um funcionários por seu CPF | /funcionario/_{CPF}_/contratos/ |
 
 #
